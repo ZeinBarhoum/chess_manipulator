@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+
+    <xacro:include filename="$(find chess_manipulator)/description/manipulator.urdf.xacro" />
+    <xacro:include filename="$(find chess_manipulator)/description/manipulator.gazebo.xacro" />
+</robot>

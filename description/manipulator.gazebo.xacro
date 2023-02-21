@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+    <!-- publishing the joint states to the /JointState topic-->
+    <gazebo>
+        <plugin name="gazebo_ros_joint_state_publisher"
+            filename="libgazebo_ros_joint_state_publisher.so">
+            <update_rate>20</update_rate>
+            <joint_name>panda_joint1</joint_name>
+            <joint_name>panda_joint2</joint_name>
+            <joint_name>panda_joint3</joint_name>
+            <joint_name>panda_joint4</joint_name>
+            <joint_name>panda_joint5</joint_name>
+            <joint_name>panda_joint6</joint_name>
+            <joint_name>panda_joint7</joint_name>
+            <joint_name>panda_joint8</joint_name>
+            <joint_name>panda_finger_joint1</joint_name>
+            <joint_name>panda_finger_joint2</joint_name>
+        </plugin>
+    </gazebo>
+
+    <xacro:property name="robot_name" value="panda" />
+
+    <!-- Friction parameters-->
+    <gazebo reference="${robot_name}_link0">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link1 -->
+    <gazebo reference="${robot_name}_link1">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link2 -->
+    <gazebo reference="${robot_name}_link2">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link3 -->
+    <gazebo reference="${robot_name}_link3">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link4 -->
+    <gazebo reference="${robot_name}_link4">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link5 -->
+    <gazebo reference="${robot_name}_link5">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link6 -->
+    <gazebo reference="${robot_name}_link6">
+
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link7 -->
+    <gazebo reference="${robot_name}_link7">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- Link8 -->
+    <gazebo reference="${robot_name}_link8">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- LinkHand -->
+    <gazebo reference="${robot_name}_hand">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- LinkRightFinger -->
+    <gazebo reference="${robot_name}_rightfinger">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+
+    <!-- LinkLeftFinger -->
+    <gazebo reference="${robot_name}_leftfinger">
+        <mu1>0.61</mu1>
+        <mu2>0.61</mu2>
+    </gazebo>
+</robot>

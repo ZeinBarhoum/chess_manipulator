@@ -14,7 +14,7 @@ def generate_launch_description():
     
     pkg_share= get_package_share_directory(pkg_name)
     
-    urdf_path = 'description/manipulator.urdf.xacro'
+    urdf_path = 'description/manipulator.gazebo.urdf.xacro'
 
     rviz_relative_path= 'rviz/config.rviz'
 
@@ -31,12 +31,6 @@ def generate_launch_description():
         output='screen',
         parameters=[{'robot_description': robot_description_content}]
     )
-    #joint state publisher node (GUI mode)
-    node_joint_state_publisher = Node(
-        package='joint_state_publisher_gui',
-        executable='joint_state_publisher_gui',
-        name='joint_state_publisher_gui',
-    )
     # Rviz2 node
     node_rviz = Node(
         package='rviz2',
@@ -44,10 +38,21 @@ def generate_launch_description():
         name='rviz2',
         arguments= ['-d', rviz_absolute_path]
     )
-
+    # Gazebo launch file
+    launch_gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
+    )
+    # entity spawn node (to spawn the robot from the /robot_description topic)
+    node_spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
+                        arguments=['-topic', 'robot_description',
+                                   '-entity', 'my_bot'],
+                        output='screen')
+    
     # Run the nodes
     return LaunchDescription([
         node_robot_state_publisher,
-        node_joint_state_publisher,
+        launch_gazebo,
+        node_spawn_entity,
         node_rviz,
     ])
