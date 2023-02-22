@@ -48,11 +48,26 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'my_bot'],
                         output='screen')
+    # spawning the joint broadcaster
+    spawn_broadcaster = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_state_broadcaster"],
+        output="screen",
+    )
     
+    spawn_controller = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_trajectory_controllers"],
+        output="screen",
+    )
     # Run the nodes
     return LaunchDescription([
         node_robot_state_publisher,
         launch_gazebo,
         node_spawn_entity,
         node_rviz,
+        spawn_broadcaster,
+        spawn_controller
     ])

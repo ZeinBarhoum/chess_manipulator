@@ -21,6 +21,7 @@ setup(
         (os.path.join('share',package_name,'rviz'),glob('rviz/*.rviz')),
         #Adding launch files
         (os.path.join('share',package_name,'launch'),glob('launch/*.launch.*')),
+        (os.path.join('share',package_name,'config'),glob('config/*.yaml')),
        
     ],
     install_requires=['setuptools'],
@@ -32,6 +33,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'controller = chess_manipulator.controller:main',
         ],
     },
 )
