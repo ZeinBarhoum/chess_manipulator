@@ -4,7 +4,7 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-
+from launch.actions import SetEnvironmentVariable
 import xacro
 
 
@@ -23,7 +23,17 @@ def generate_launch_description():
     # extracting the robot deffinition from the xacro file
     xacro_file = os.path.join(pkg_share, urdf_path)
     robot_description_content = xacro.process_file(xacro_file).toxml()
+    
+    # add the path to the model file to  gazebo
+    models_path = os.path.join(get_package_share_directory(pkg_name),'models')
 
+    if 'GAZEBO_MODEL_PATH' in os.environ:
+        model_path =  os.environ['GAZEBO_MODEL_PATH'] + ':' + models_path
+    else:
+        model_path =  models_path
+
+    world_path=os.path.join(pkg_share, 'worlds', 'chesset.world')
+    
     # robot state publisher node
     node_robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -40,8 +50,8 @@ def generate_launch_description():
     )
     # Gazebo launch file
     launch_gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
+        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
+        launch_arguments={'world' : world_path}.items()
     )
     # entity spawn node (to spawn the robot from the /robot_description topic)
     node_spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
@@ -64,6 +74,7 @@ def generate_launch_description():
     )
     # Run the nodes
     return LaunchDescription([
+        SetEnvironmentVariable(name='GAZEBO_MODEL_PATH', value=model_path),
         node_robot_state_publisher,
         launch_gazebo,
         node_spawn_entity,

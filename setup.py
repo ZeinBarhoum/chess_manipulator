@@ -4,6 +4,11 @@ from glob import glob
 
 package_name = 'chess_manipulator'
 
+models_paths = []
+directories= glob('models/')+glob('models/*/')+glob('models/*/*/')
+for directory in directories:
+    models_paths.append((os.path.join('share',package_name,directory),glob(f'{directory}/*.*')))
+    
 setup(
     name=package_name,
     version='0.0.0',
@@ -22,8 +27,9 @@ setup(
         #Adding launch files
         (os.path.join('share',package_name,'launch'),glob('launch/*.launch.*')),
         (os.path.join('share',package_name,'config'),glob('config/*.yaml')),
-       
-    ],
+        (os.path.join('share',package_name,'worlds'),glob('worlds/*'))
+        ]+models_paths,
+    
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Zein Alabedeen Barhoum and Rahaf Alshaowa',
