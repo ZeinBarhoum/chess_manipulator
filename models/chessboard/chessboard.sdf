@@ -20,14 +20,14 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.46 0.46 0.04</size>
+            <size>20000 0.75 0.04</size>
           </box>
         </geometry>
         <surface>
           <friction>
             <ode>
-              <mu>30.0</mu>
-              <mu2>30.0</mu2>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
               <fdir1>0 0 0</fdir1>
             </ode>
           </friction>
@@ -48,7 +48,7 @@
           <mesh>
             <uri>model://chessboard/meshes/chessboard.dae</uri>
             <!-- the dae is a cube of 5x5x5 cm and the chessboard is 46x46x4-->
-            <scale> 9.2 9.2 0.8 </scale>
+            <scale> 14 14 0.8 </scale>
           </mesh>
         </geometry>
       </visual>
