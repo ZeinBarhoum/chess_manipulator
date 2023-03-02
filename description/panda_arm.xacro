@@ -68,7 +68,7 @@
     <link name="${arm_id}_link0">
       <visual>
         <geometry>
-          <mesh filename="file://$(find _chess)/meshes/visual/link0.dae" />
+          <mesh filename="file://$(find chess_manipulator)/meshes/visual/link0.dae" />
         </geometry>
       </visual>
       <collision>

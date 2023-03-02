@@ -14,7 +14,7 @@ def generate_launch_description():
     
     pkg_share= get_package_share_directory(pkg_name)
     
-    urdf_path = 'description/manipulator.gazebo.urdf.xacro'
+    urdf_path = 'description/manipulator.urdf.xacro'
 
     rviz_relative_path= 'rviz/config.rviz'
 
