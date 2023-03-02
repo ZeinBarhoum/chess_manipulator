@@ -21,13 +21,8 @@ class JointControlClient(Node):
                        'panda_joint4', 
                        'panda_joint5',
                        'panda_joint6',
-                       'panda_joint7',
-                       'panda_joint8']
+                       'panda_joint7']
         points=[]
-        point1=JointTrajectoryPoint()
-        point1.positions=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        
-        # angles= [1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
         
         point2=JointTrajectoryPoint()
         point2.time_from_start= Duration(seconds=1, nanoseconds=0).to_msg()
@@ -77,8 +72,7 @@ def main(args=None):
               float(sys.argv[4]),
               float(sys.argv[5]),
               float(sys.argv[6]),
-              float(sys.argv[7]),
-              0.0
+              float(sys.argv[7])
               ]
     future = action_client.send_goal(angles)
 

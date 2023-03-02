@@ -29,59 +29,57 @@
         </link>
         <link name="${ns}_finger">
             <visual name='back'>
-                <origin xyz="-0.02 0 0.02" rpy="0 0 0" />
+                <origin xyz="0 0 0.025" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.04 0.04" />
+                    <box size="0.02 0.08 0.05" />
                 </geometry>
             </visual>
 
             <visual name='left'>
-                <origin xyz="0 -0.02 0.02" rpy="0 0 0" />
+                <origin xyz="0.04 -0.04 0.03" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.04 0.01 0.04" />
+                    <box size="0.08 0.02 0.04" />
                 </geometry>
             </visual>
 
             <visual name='right'>
-                <origin xyz="0 0.02 0.02" rpy="0 0 0" />
+                <origin xyz="0.04 0.04 0.03" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.04 0.01 0.04" />
+                    <box size="0.08 0.02 0.04" />
                 </geometry>
             </visual>
 
             <visual name='front'>
-                <origin xyz="0.02 0 0.02" rpy="0 0 0" />
+                <origin xyz="0.08 0 0.025" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.04 0.04" />
+                    <box size="0.02 0.08 0.05" />
                 </geometry>
             </visual>
-
-
             <collision name='back'>
-                <origin xyz="-0.02 0 0.02" rpy="0 0 0" />
+                <origin xyz="0 0 0.025" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.04 0.04" />
+                    <box size="0.02 0.08 0.05" />
                 </geometry>
             </collision>
 
             <collision name='left'>
-                <origin xyz="0 -0.02 0.02" rpy="0 0 0" />
+                <origin xyz="0.04 -0.04 0.03" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.04 0.01 0.04" />
+                    <box size="0.08 0.02 0.04" />
                 </geometry>
             </collision>
 
             <collision name='right'>
-                <origin xyz="0 0.02 0.02" rpy="0 0 0" />
+                <origin xyz="0.04 0.04 0.03" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.04 0.01 0.04" />
+                    <box size="0.08 0.02 0.04" />
                 </geometry>
             </collision>
 
             <collision name='front'>
-                <origin xyz="0.02 0 0.02" rpy="0 0 0" />
+                <origin xyz="0.08 0 0.025" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.04 0.04" />
+                    <box size="0.02 0.08 0.05" />
                 </geometry>
             </collision>
 

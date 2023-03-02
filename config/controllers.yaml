@@ -15,7 +15,6 @@ joint_trajectory_controllers:
       - panda_joint5
       - panda_joint6
       - panda_joint7
-      - panda_joint8
     interface_name: position
     command_interfaces:
       - position
