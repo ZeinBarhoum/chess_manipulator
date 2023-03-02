@@ -4,8 +4,8 @@
   <!-- Empty link to referr everything to -->
   <link name="world" />
   <!-- Include arm and hand xacro files-->
-  <xacro:include filename="$(find improves_chess)/description/panda_arm.xacro" />
-  <xacro:include filename="$(find improves_chess)/description/panda_hand.xacro" />
+  <xacro:include filename="$(find chess_manipulator)/description/panda_arm.xacro" />
+  <xacro:include filename="$(find chess_manipulator)/description/panda_hand.xacro" />
 
   <!-- call the arm macro-->
   <xacro:panda_arm />
@@ -13,6 +13,6 @@
   <xacro:panda_hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8" />
 
   
-  <xacro:include filename="$(find improves_chess)/description/manipulator.gazebo.xacro" />
-  <xacro:include filename="$(find improves_chess)/description/manipulator.control.xacro" />
+  <xacro:include filename="$(find chess_manipulator)/description/manipulator.gazebo.xacro" />
+  <xacro:include filename="$(find chess_manipulator)/description/manipulator.control.xacro" />
 </robot>

@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
     <gazebo>
         <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-            <parameters>$(find improves_chess)/config/controllers.yaml</parameters>
+            <parameters>$(find chess_manipulator)/config/controllers.yaml</parameters>
         </plugin>
     </gazebo>
 
