@@ -4,7 +4,8 @@
   <name>chess_manipulator</name>
   <version>0.0.0</version>
   <description>Franka Emika Panda manipulator playing chess</description>
-  <maintainer email="zein.barhoum799@gmail.com">Zein Alabedeen Barhoum and Rahaf Alshaowa</maintainer>
+  <maintainer email="zein.barhoum799@gmail.com">Zein Alabedeen Barhoum</maintainer>
+  <maintainer email="rahafalshaowa98@gmail.com">Rahaf Alshaowa</maintainer>
   <license>Apache License 2.0</license>
 
   <depend>rclpy</depend>
