@@ -27,7 +27,8 @@ setup(
         #Adding launch files
         (os.path.join('share',package_name,'launch'),glob('launch/*.launch.*')),
         (os.path.join('share',package_name,'config'),glob('config/*.yaml')),
-        (os.path.join('share',package_name,'worlds'),glob('worlds/*'))
+        (os.path.join('share',package_name,'worlds'),glob('worlds/*')),
+        (os.path.join('lib',package_name), glob('improves_chess/RobotClass.py'))
         ]+models_paths,
     
     install_requires=['setuptools'],
