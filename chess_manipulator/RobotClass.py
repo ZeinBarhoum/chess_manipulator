@@ -61,7 +61,7 @@ class panda_7dof(Panda):
         if(plan):
             self.plan.extend(qs)
         else:
-            os.system(f'ros2 run improves_chess multi_point_controller {int(n)} {int(dt*1e9)} {self.string_qs(qs)}')
+            os.system(f'ros2 run chess_manipulator multi_point_controller {int(n)} {int(dt*1e9)} {self.string_qs(qs)}')
         self.update(qs[-1])
     
     def direction(self, direction, distance, t, n=3, plan = False):
@@ -86,7 +86,7 @@ class panda_7dof(Panda):
         qs = self.plan
         n= len(qs)
         dt = t/n
-        os.system(f'ros2 run improves_chess multi_point_controller {n} {int(dt*1e9)} {self.string_qs(qs)}')
+        os.system(f'ros2 run chess_manipulator multi_point_controller {n} {int(dt*1e9)} {self.string_qs(qs)}')
         self.update(qs[-1])
         if(erase):
             self.plan = []
@@ -100,14 +100,14 @@ class panda_7dof(Panda):
         if(plan):
             self.plan.extend([q])
         else:
-            os.system(f'ros2 run improves_chess multi_point_controller 1 {int(t*1e9)} {self.string_q(q)}')
+            os.system(f'ros2 run chess_manipulator multi_point_controller 1 {int(t*1e9)} {self.string_q(q)}')
         self.update(q)
         
         
         
     def set_q(self, q, t):
         self.update(q)
-        os.system(f'ros2 run improves_chess multi_point_controller 1 {int(t*1e9)} {self.string_q(q)} ')
+        os.system(f'ros2 run chess_manipulator multi_point_controller 1 {int(t*1e9)} {self.string_q(q)} ')
     
     def update(self,q):
         self.q = q
