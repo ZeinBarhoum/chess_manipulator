@@ -10,7 +10,7 @@ import sys
 class JointControlClient(Node):
     def __init__(self):
         super().__init__(node_name='joint_controller')
-        self._action_client=ActionClient(node=self, action_type=FollowJointTrajectory, action_name='/joint_trajectory_controllers/follow_joint_trajectory')
+        self._action_client=ActionClient(node=self, action_type=FollowJointTrajectory, action_name='/joint_trajectory_controller/follow_joint_trajectory')
         # self._subscriber =
     def send_goal(self,angles):
         goal_msg = FollowJointTrajectory.Goal()

@@ -42,7 +42,7 @@ setup(
         'console_scripts': [
             'controller = chess_manipulator.controller:main',
             'multi_point_controller = chess_manipulator.multi_point_controller:main',
-            'example_game = improves_chess.example_game:main',
+            'example_game = chess_manipulator.example_game:main',
         ],
     },
 )

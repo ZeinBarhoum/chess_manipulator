@@ -69,7 +69,7 @@ def generate_launch_description():
     spawn_controller = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_trajectory_controllers"],
+        arguments=["joint_trajectory_controller"],
         output="screen",
     )
     # Run the nodes
@@ -78,7 +78,7 @@ def generate_launch_description():
         node_robot_state_publisher,
         launch_gazebo,
         node_spawn_entity,
-        node_rviz,
+        # node_rviz,
         spawn_broadcaster,
         spawn_controller
     ])
