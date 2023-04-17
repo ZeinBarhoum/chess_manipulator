@@ -15,8 +15,9 @@ To launch the simulation:
 ```
 ros2 launch chess_manipulator simulation.launch.py
 ```
-To run the example game:
+To run the example game, In another terminal, from inside the workspace run the following:
 ```
+. install/setup.bash
 ros2 run chess_manipulator example_game
 ```
 ## Example
